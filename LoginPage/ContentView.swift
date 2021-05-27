@@ -8,9 +8,29 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var showSheetView = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView{
+            List{
+                Text("Placeholder 1")
+                Text("Placeholder 2")
+                Text("Placeholder 3")
+            }
+            .navigationTitle("Lista")
+            .navigationBarItems(trailing:
+                Button(action: {
+                    showSheetView = true
+                }, label: {
+                    Image(systemName: "person.crop.circle")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                }).sheet(isPresented: $showSheetView, content: {
+                    LoginPage()
+                })
+            )
+        }
     }
 }
 
