@@ -14,18 +14,16 @@ struct ContentView: View {
     var body: some View {
         NavigationView{
             List{
-                Text("Placeholder 1")
-                Text("Placeholder 2")
-                Text("Placeholder 3")
+                Text("Faça seu login")
             }
             .navigationTitle("Lista")
             .navigationBarItems(trailing:
                 Button(action: {
                     showSheetView = true
                 }, label: {
-                    Image(systemName: "person.crop.circle")
+                    Image(systemName: "person.crop.circle.badge.xmark")
                         .resizable()
-                        .frame(width: 30, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                        .frame(width: 35, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 }).sheet(isPresented: $showSheetView, content: {
                     LoginPage()
                 })
