@@ -97,7 +97,7 @@ struct BotaoLogin: View{
     }
 }
 
-
+//Dispensa o teclado ao apertar determinado botão
 #if canImport(UIKit)
 extension View {
     func hideKeyboard() {
