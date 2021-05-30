@@ -33,6 +33,11 @@ struct LoginPage: View {
                 Button(action: {
                     print("login")
                     hideKeyboard()
+                    
+//                    if self.usuario == UserDefaults.standard.string(forKey: "usuario") 
+                    
+                    
+                    
                 }, label: {
                     BotaoLogin(text: "Login")
                     

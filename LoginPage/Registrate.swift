@@ -9,10 +9,12 @@ import SwiftUI
 
 struct Registrate: View {
     
+    @State var nomeCompleto: String = ""
     @State var usuario: String = ""
     @State var profissao: String = ""
     @State var email: String = ""
     @State var senha: String = ""
+    @State var statusLog: Bool = false
     
     
     
@@ -23,6 +25,11 @@ struct Registrate: View {
                 .bold()
             
             Group{
+                
+                TextField("Nome Completo", text: $nomeCompleto)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(.bottom, 6)
+                
                 TextField("Usuário", text: $usuario)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .padding(.bottom, 6)
@@ -43,6 +50,17 @@ struct Registrate: View {
             Button(action: {
                 print("login")
                 hideKeyboard()
+                
+                self.statusLog = true
+                
+                UserDefaults.standard.set(self.nomeCompleto, forKey: "nomeCompleto")
+                UserDefaults.standard.set(self.usuario, forKey: "usuario")
+                UserDefaults.standard.set(self.profissao, forKey: "profissao")
+                UserDefaults.standard.set(self.email, forKey: "e-mail")
+                UserDefaults.standard.set(self.senha, forKey: "senha")
+                UserDefaults.standard.set(self.statusLog, forKey: "statusLog")
+                
+                
             }, label: {
                 BotaoLogin(text: "Cadastrar")
                 

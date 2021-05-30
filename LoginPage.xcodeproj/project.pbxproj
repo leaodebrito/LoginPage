@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C18236032663BE0D0049D0FE /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18236022663BE0D0049D0FE /* Usuario.swift */; };
 		C1D46E16266047A300B1ADA5 /* LoginPageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D46E15266047A300B1ADA5 /* LoginPageApp.swift */; };
 		C1D46E18266047A300B1ADA5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D46E17266047A300B1ADA5 /* ContentView.swift */; };
 		C1D46E1A266047A400B1ADA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1D46E19266047A400B1ADA5 /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C18236022663BE0D0049D0FE /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		C1D46E12266047A200B1ADA5 /* LoginPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1D46E15266047A300B1ADA5 /* LoginPageApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPageApp.swift; sourceTree = "<group>"; };
 		C1D46E17266047A300B1ADA5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				C1D46E17266047A300B1ADA5 /* ContentView.swift */,
 				C1D46E402660499000B1ADA5 /* LoginPage.swift */,
 				C1D46E422660565700B1ADA5 /* Registrate.swift */,
+				C18236022663BE0D0049D0FE /* Usuario.swift */,
 				C1D46E19266047A400B1ADA5 /* Assets.xcassets */,
 				C1D46E1E266047A400B1ADA5 /* Info.plist */,
 				C1D46E1B266047A400B1ADA5 /* Preview Content */,
@@ -268,6 +271,7 @@
 				C1D46E18266047A300B1ADA5 /* ContentView.swift in Sources */,
 				C1D46E432660565700B1ADA5 /* Registrate.swift in Sources */,
 				C1D46E412660499000B1ADA5 /* LoginPage.swift in Sources */,
+				C18236032663BE0D0049D0FE /* Usuario.swift in Sources */,
 				C1D46E16266047A300B1ADA5 /* LoginPageApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
