@@ -12,6 +12,9 @@ struct LoginPage: View {
     @State var usuario: String = ""
     @State var senha: String = ""
     
+    @State var loginCerto: Bool = true
+    @State var loginErrado: Bool = false
+    
     var body: some View {
         NavigationView{
             VStack(alignment: .leading){
@@ -34,7 +37,11 @@ struct LoginPage: View {
                     print("login")
                     hideKeyboard()
                     
-//                    if self.usuario == UserDefaults.standard.string(forKey: "usuario") 
+                    if self.usuario == UserDefaults.standard.string(forKey: "usuario") && self.senha == UserDefaults.standard.string(forKey: "senha"){
+                        UserDefaults.standard.set(self.loginCerto, forKey: "statusLogin")
+                    }else{
+                        UserDefaults.standard.set(self.loginErrado, forKey: "statusLogin")
+                    }
                     
                     
                     
