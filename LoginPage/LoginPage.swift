@@ -9,11 +9,24 @@ import SwiftUI
 
 struct LoginPage: View {
     
+    //Varias dos textfields para validação do login
     @State var usuario: String = ""
     @State var senha: String = ""
     
+    //Retorna os valores cadastrados no UserDefaults
+    @State private var usuarioCadastrado = UserDefaults.standard.string(forKey: "usuario")
+    @State private var senhaCadastrada = UserDefaults.standard.string(forKey: "senha")
+    
+    //Bool para validação do login
     @State var loginCerto: Bool = true
     @State var loginErrado: Bool = false
+
+    //Bool para notificações
+    @State var notificacoes: Bool = false
+    
+    
+    //Fechar visualização do sheetview de criação de projeto
+    @Environment (\.presentationMode) var presentationMode
     
     var body: some View {
         NavigationView{
@@ -32,18 +45,33 @@ struct LoginPage: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                 }
                 
+                
+                
+                
                 //Botão para fazer o login
                 Button(action: {
-                    print("login")
-                    hideKeyboard()
-                    
-                    if self.usuario == UserDefaults.standard.string(forKey: "usuario") && self.senha == UserDefaults.standard.string(forKey: "senha"){
-                        UserDefaults.standard.set(self.loginCerto, forKey: "statusLogin")
+                    //MARK: - Condicional para validação do login
+                    ///Esse bloco de código fazer comparação lógica dos valores armazenados no UserDefaults com os valores de entrada dos textfields
+                    if self.usuario == usuarioCadastrado && self.senha == senhaCadastrada{
+                        //Mudança da flag de statusLog para verdadeiro
+                        UserDefaults.standard.set(self.loginCerto, forKey: "statusLog")
+                        print("login realizado")
+                        
+                        //função que adiciona um tempo antes da realização de alguma ação
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+                            //Dismiss a sheet view após apertar o botão
+                            presentationMode.wrappedValue.dismiss()
+                        })
+                        
+                        notificacoes.toggle()
+                        
                     }else{
-                        UserDefaults.standard.set(self.loginErrado, forKey: "statusLogin")
+                        UserDefaults.standard.set(self.loginErrado, forKey: "statusLog")
+                        print("login não realizado")
                     }
                     
-                    
+                    hideKeyboard()
+                    print("apertaram o botão")
                     
                 }, label: {
                     BotaoLogin(text: "Login")
@@ -51,6 +79,18 @@ struct LoginPage: View {
                 })
                 .padding(.top)
                 .padding(.bottom, 100)
+                
+                if notificacoes{
+                    Group{
+                        Text("Login Realizado com Sucesso")
+                            .bold()
+                            .foregroundColor(.red)
+                            .frame( maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/, idealHeight: 40, maxHeight: 40, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .padding(.horizontal)
+                            
+                    }
+                    .padding(.bottom)
+                }
                 
                 
                 //MARK: - Cadastrar

@@ -44,6 +44,7 @@ struct ContentView: View {
                                     }).sheet(isPresented: $showSheetView, content: {
                                         if statusLog{
                                             Usuario()
+                                            
                                         }else if statusLog == false{
                                             LoginPage()
                                         }
