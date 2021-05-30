@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Usuario: View {
     
-    @State private var usuario = UserDefaults.standard.string(forKey: "nomeCompleto")
+    @State private var nomeCompleto = UserDefaults.standard.string(forKey: "nomeCompleto")
+    @State private var profissao = UserDefaults.standard.string(forKey: "profissao")
+    @State private var usuario = UserDefaults.standard.string(forKey: "usuario")
     @State private var logout: Bool = false
     
     
@@ -19,6 +21,12 @@ struct Usuario: View {
     var body: some View {
         VStack{
             Text("Hello, \(usuario ?? "world")!")
+                .font(.title)
+                .padding()
+            
+            Text(String(nomeCompleto ?? "-"))
+            Text(String(profissao ?? "-"))
+                .padding(.bottom)
             
             Button(action: {
                 UserDefaults.standard.set(self.logout, forKey: "statusLog")
@@ -34,6 +42,7 @@ struct Usuario: View {
             }, label: {
                 BotaoLogin(text: "Logout")
             })
+            .padding(.horizontal)
             
             
             

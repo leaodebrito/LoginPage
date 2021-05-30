@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var user: User
     @State private var statusLog = UserDefaults.standard.bool(forKey: "statusLog")
     
     @State var showSheetView = false
@@ -17,10 +18,10 @@ struct ContentView: View {
         NavigationView{
             
             List{
-                if statusLog{
+                if user.statusLog{
                     Text("Login Realizado")
                     Text("Vamos em frente")
-                }else if statusLog == false{
+                }else{
                     Text("Faça seu login")
                 }
             }
@@ -30,11 +31,11 @@ struct ContentView: View {
                                         showSheetView = true
                                     }, label: {
                                         //MARK: - mudança de imagem de log
-                                        if statusLog{
+                                        if user.statusLog{
                                             Image(systemName: "person.crop.circle.badge.checkmark")
                                                 .resizable()
                                                 .frame(width: 35, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }else if statusLog == false{
+                                        }else if user.statusLog == false{
                                             Image(systemName: "person.crop.circle.badge.xmark")
                                                 .resizable()
                                                 .frame(width: 35, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -56,6 +57,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(user: User())
     }
 }
