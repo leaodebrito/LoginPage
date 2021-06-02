@@ -9,10 +9,14 @@ import SwiftUI
 
 @main
 struct LoginPageApp: App {
-
+    
+    @StateObject var usuario = User()
     
     var body: some Scene {
         WindowGroup {
-            ContentView()        }
+            ContentView()
+                .environmentObject(usuario)
+            
+        }
     }
 }

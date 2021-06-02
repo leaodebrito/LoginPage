@@ -19,7 +19,7 @@ let statusLogin = UserDefaults.standard.bool(forKey: "statusLog")
 struct ContentView: View {
     
     
-    @ObservedObject var usuario = User()
+    @StateObject var usuario = User()
     
     @State private var statusLog = UserDefaults.standard.bool(forKey: "statusLog")
     
@@ -44,11 +44,11 @@ struct ContentView: View {
                                         showSheetView = true
                                     }, label: {
                                         //MARK: - mudança de imagem de log
-                                        if statusLogin{
+                                        if usuario.statusLog{
                                             Image(systemName: "person.crop.circle.badge.checkmark")
                                                 .resizable()
                                                 .frame(width: 35, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }else if statusLogin == false{
+                                        }else if usuario.statusLog == false{
                                             Image(systemName: "person.crop.circle.badge.xmark")
                                                 .resizable()
                                                 .frame(width: 35, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
