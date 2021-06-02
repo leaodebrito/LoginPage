@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C102A3FF26670C4E001E8E4C /* View1.swift in Sources */ = {isa = PBXBuildFile; fileRef = C102A3FE26670C4E001E8E4C /* View1.swift */; };
 		C104B2CB2664156B00A4739F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C104B2CA2664156B00A4739F /* User.swift */; };
 		C18236032663BE0D0049D0FE /* Usuario.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18236022663BE0D0049D0FE /* Usuario.swift */; };
 		C1D46E16266047A300B1ADA5 /* LoginPageApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D46E15266047A300B1ADA5 /* LoginPageApp.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C102A3FE26670C4E001E8E4C /* View1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View1.swift; sourceTree = "<group>"; };
 		C104B2CA2664156B00A4739F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C18236022663BE0D0049D0FE /* Usuario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Usuario.swift; sourceTree = "<group>"; };
 		C1D46E12266047A200B1ADA5 /* LoginPage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginPage.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +82,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C102A3FD26670C3E001E8E4C /* Others views */ = {
+			isa = PBXGroup;
+			children = (
+				C102A3FE26670C4E001E8E4C /* View1.swift */,
+			);
+			path = "Others views";
+			sourceTree = "<group>";
+		};
 		C1D46E09266047A200B1ADA5 = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +121,7 @@
 				C104B2CA2664156B00A4739F /* User.swift */,
 				C1D46E19266047A400B1ADA5 /* Assets.xcassets */,
 				C1D46E1E266047A400B1ADA5 /* Info.plist */,
+				C102A3FD26670C3E001E8E4C /* Others views */,
 				C1D46E1B266047A400B1ADA5 /* Preview Content */,
 			);
 			path = LoginPage;
@@ -277,6 +288,7 @@
 				C1D46E412660499000B1ADA5 /* LoginPage.swift in Sources */,
 				C18236032663BE0D0049D0FE /* Usuario.swift in Sources */,
 				C1D46E16266047A300B1ADA5 /* LoginPageApp.swift in Sources */,
+				C102A3FF26670C4E001E8E4C /* View1.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

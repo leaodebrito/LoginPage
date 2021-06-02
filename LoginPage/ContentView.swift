@@ -7,9 +7,20 @@
 
 import SwiftUI
 
+
+let usuarioCadastrado = UserDefaults.standard.string(forKey: "usuario")
+let nomeCadastrado = UserDefaults.standard.string(forKey: "nomeCompleto")
+let profissaoCadastrada = UserDefaults.standard.string(forKey: "profissao")
+let emailCadastrado = UserDefaults.standard.string(forKey: "email")
+let senhaCadastrada = UserDefaults.standard.string(forKey: "senha")
+let statusLogin = UserDefaults.standard.bool(forKey: "statusLog")
+
+
 struct ContentView: View {
     
-    @ObservedObject var user: User
+    
+    @ObservedObject var usuario = User()
+    
     @State private var statusLog = UserDefaults.standard.bool(forKey: "statusLog")
     
     @State var showSheetView = false
@@ -18,10 +29,12 @@ struct ContentView: View {
         NavigationView{
             
             List{
-                if user.statusLog{
-                    Text("Login Realizado")
+                if usuario.statusLog{
+                    NavigationLink(destination: View1(), label: {Text("Login Realizado")})
+                    NavigationLink(destination: View1(), label: {Text("Vamos em frente")})
                     Text("Vamos em frente")
                 }else{
+                    NavigationLink(destination: View1(), label: {Text("Faça seu login")})
                     Text("Faça seu login")
                 }
             }
@@ -31,11 +44,11 @@ struct ContentView: View {
                                         showSheetView = true
                                     }, label: {
                                         //MARK: - mudança de imagem de log
-                                        if user.statusLog{
+                                        if statusLogin{
                                             Image(systemName: "person.crop.circle.badge.checkmark")
                                                 .resizable()
                                                 .frame(width: 35, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                        }else if user.statusLog == false{
+                                        }else if statusLogin == false{
                                             Image(systemName: "person.crop.circle.badge.xmark")
                                                 .resizable()
                                                 .frame(width: 35, height: 30, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
@@ -57,6 +70,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(user: User())
+        ContentView()
     }
 }

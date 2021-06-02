@@ -9,6 +9,8 @@ import SwiftUI
 
 struct LoginPage: View {
     
+
+    
     //Varias dos textfields para validação do login
     @State var usuario: String = ""
     @State var senha: String = ""

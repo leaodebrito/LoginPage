@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Usuario: View {
+
     
     @State private var nomeCompleto = UserDefaults.standard.string(forKey: "nomeCompleto")
     @State private var profissao = UserDefaults.standard.string(forKey: "profissao")

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Registrate: View {
     
+
     @State var nomeCompleto: String = ""
     @State var usuario: String = ""
     @State var profissao: String = ""
@@ -60,11 +61,18 @@ struct Registrate: View {
                 UserDefaults.standard.set(self.senha, forKey: "senha")
                 UserDefaults.standard.set(self.statusLog, forKey: "statusLog")
                 
-                
             }, label: {
                 BotaoLogin(text: "Cadastrar")
                 
             })
+            .onAppear{
+                UserDefaults.standard.set(self.nomeCompleto, forKey: "nomeCompleto")
+                UserDefaults.standard.set(self.usuario, forKey: "usuario")
+                UserDefaults.standard.set(self.profissao, forKey: "profissao")
+                UserDefaults.standard.set(self.email, forKey: "e-mail")
+                UserDefaults.standard.set(self.senha, forKey: "senha")
+                UserDefaults.standard.set(self.statusLog, forKey: "statusLog")
+            }
             .padding(.top)
             .padding(.bottom, 100)
             
